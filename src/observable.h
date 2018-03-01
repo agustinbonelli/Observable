@@ -18,7 +18,7 @@ public:
     }
     
     template<unsigned int eventidx,typename ... T>
-    void NotifyObserversOfEvent(T ... args)
+    void NotifyObserversOfEvent(T&& ... args)
     {
         for(auto f: std::get<eventidx>(observers))
         {
